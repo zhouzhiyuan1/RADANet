@@ -61,7 +61,7 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
 ## Evaluation
 First, you should download the cropped testset ALFW and ALFW-2000-3D in [test.data.zip](https://pan.baidu.com/s/1DTVGCG5k0jjjhOc8GcSLOw), then unzip it and put it in the root directory.
 Next, run the benchmark code by providing trained model path.
-I have already provided five pre-trained models [phase1_wpdc_checkpoint.pth.tar](https://drive.google.com/file/d/1B-S_7_NEGvGnzNW4p9Me7fNvNmOuN5J2/view?usp=sharing).
+I have already provided the pre-trained model [phase1_wpdc_checkpoint.pth.tar](https://drive.google.com/drive/folders/1HbAeKuAyaJ_pCCEwLUq-HfgKoN6aMfBk?usp=sharing).
 ```
 python3 ./benchmark.py -c models/phase1_wpdc_checkpoint.pth.tar
 ```
