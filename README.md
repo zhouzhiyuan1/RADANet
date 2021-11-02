@@ -56,18 +56,6 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
     Dump obj with sampled texture to samples/test1_1.obj
     Save visualization result to samples/test1_RADAN.jpg
     ```
-   
-4. Additional example
-
-    ```
-    python3 ./main.py -f samples/emma_input.jpg --bbox_init=two --dlib_bbox=false
-    ```
-
-<p align="center">
-  <img src="Code/samples/emma_input_3DDFA.jpg" alt="samples" width="750px">
-</p>
-
-
 
 
 ## Evaluation
