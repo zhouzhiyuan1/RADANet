@@ -8,8 +8,6 @@ import torchvision.transforms as transforms
 import torch.backends.cudnn as cudnn
 import time
 import numpy as np
-#import resnet_best_42
-import damdnet.DAMDNet as DAMDNet
 import dfa.mobilenet_v1 as fa
 from pyconvresnet_DDGL_se_norelu3 import ddgl
 import random
@@ -26,11 +24,7 @@ def extract_param_2000(checkpoint_fp, root='', filelists=None, arch='resnet50', 
     checkpoint = torch.load(checkpoint_fp, map_location=map_location)['state_dict']
     torch.cuda.set_device(device_ids[0])
     model = ddgl()
-    #model = DAMDNet.DAMDNet_v1()
-    #model = fa.mobilenet_1()
     model = nn.DataParallel(model, device_ids=device_ids).cuda()
-   # model = ddgl()
-    # print(model)
     model.load_state_dict(checkpoint)
 
     dataset = DDFATestDataset(filelists=filelists, root=root,
@@ -148,7 +142,7 @@ def main():
     parser = argparse.ArgumentParser(description='3DDFA Benchmark')
     parser.add_argument('--arch', default='resnet34', type=str)
     parser.add_argument('-c', '--checkpoint-fp',
-                        default='/data1/lab105/zhouzhiyuan/models/phase1_wpdc_checkpoint_epoch_37.pth.tar',
+                        default='models/phase1_wpdc_checkpoint.pth.tar',
                         type=str)
     args = parser.parse_args()
     benchmark_pipeline(args.arch, args.checkpoint_fp)
