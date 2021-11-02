@@ -9,11 +9,8 @@ import torch.backends.cudnn as cudnn
 import random
 
 from pyconvresnet_DDGL_se_norelu3 import ddgl
-# from DAMDNet import DAMDNet_v1
-# from mobilenet_v1 import mobilenet_1
 import time
 import numpy as np
-# from pyconvresnet import pynet
 from benchmark_aflw2000 import calc_nme as calc_nme_alfw2000
 from benchmark_aflw2000 import ana as ana_alfw2000
 from benchmark_aflw import calc_nme as calc_nme_alfw
@@ -148,7 +145,7 @@ def main():
     parser = argparse.ArgumentParser(description='3DDFA Benchmark')
     parser.add_argument('--arch', default='resnet34', type=str)
     parser.add_argument('-c', '--checkpoint-fp',
-                        default='/data1/lab105/zhouzhiyuan/models/phase1_wpdc_checkpoint_epoch_37.pth.tar',
+                        default='models/phase1_wpdc_checkpoint.pth.tar',
                         type=str)
     args = parser.parse_args()
 
@@ -158,20 +155,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-
-# def main():
-#     parser = argparse.ArgumentParser(description='3DDFA Benchmark')
-#     parser.add_argument('--arch', default='', type=str)
-#
-# parser.add_argument('-c', '--checkpoint-fp',
-# default='/data1/zhouzhiyuan/DFA/training/snapshot_replay/phase1_wpdc_checkpoint_epoch_37.pth.tar', type=str) #
-# epoch_34: 3.665, 4.931;
-# epoch_38: 3.692, 4.924;
-#
-#     # replay attention
-#     # epoch_34: 3.661, 4.886;
-#     # epoch_37: 3.623, 4.837;
-#     args = parser.parse_args()
-#
-#     benchmark_pipeline(args.arch, args.checkpoint_fp)
