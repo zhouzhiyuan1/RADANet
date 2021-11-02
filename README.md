@@ -54,24 +54,9 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
     Dump tp samples/test1_1.ply
     Save 68 3d landmarks to samples/test1_1.txt
     Dump obj with sampled texture to samples/test1_1.obj
-    Dump to samples/test1_pose.jpg
-    Dump to samples/test1_depth.png
-    Dump to samples/test1_pncc.png
-    Save visualization result to samples/test1_3DDFA.jpg
+    Save visualization result to samples/test1_RADAN.jpg
     ```
-
-    Because `test1.jpg` has two faces, there are two `.ply` and `.obj` files (can be rendered by Meshlab or Microsoft 3D Builder) predicted. Depth, PNCC, PAF and pose estimation are all set true by default. Please run `python3 main.py -h` or review the code for more details.
-
-    The 68 landmarks visualization result `samples/test1_3DDFA.jpg` and pose estimation result `samples/test1_pose.jpg` are shown below:
-
-<p align="center">
-  <img src="Code/samples/test1_3DDFA.jpg" alt="samples" width="650px">
-</p>
-
-<p align="center">
-  <img src="Code/samples/test1_pose.jpg" alt="samples" width="650px">
-</p>
-
+   
 4. Additional example
 
     ```
@@ -82,9 +67,6 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
   <img src="Code/samples/emma_input_3DDFA.jpg" alt="samples" width="750px">
 </p>
 
-<p align="center">
-  <img src="Code/samples/emma_input_pose.jpg" alt="samples" width="750px">
-</p>
 
 
 
