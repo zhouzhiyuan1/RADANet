@@ -37,15 +37,6 @@ def main(args):
     arch = ''
     checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
     model = ddgl()  # 62 = 12(pose) + 40(shape) +10(expression)
-
-    # checkpoint_fp = '/data1/lab105/zhouzhiyuan/3ddfa/MFIRRN/phase1_wpdc_checkpoint_epoch_42.pth.tar'
-    # arch = 'resnet34'
-    #
-    # checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
-    # model = getattr(resnet, arch)(num_classes=62)  # 62 = 12(pose) + 40(shape) +10(expression)
-    #
-    # model_dict = model.state_dict()
-    #model = DAMDNet.DAMDNet_v1()
     model_dict = model.state_dict()
     # because the model is trained by multiple gpus, prefix module should be removed
     for k in checkpoint.keys():
@@ -138,11 +129,11 @@ def main(args):
                 vertices = predict_dense(param, roi_box)
                 vertices_lst.append(vertices)
             if args.dump_ply:
-                dump_to_ply(vertices, tri, '{}_{}_our.ply'.format(img_fp.replace(suffix, ''), ind))
+                dump_to_ply(vertices, tri, '{}_{}.ply'.format(img_fp.replace(suffix, ''), ind))
             if args.dump_vertex:
-                dump_vertex(vertices, '{}_{}_our.mat'.format(img_fp.replace(suffix, ''), ind))
+                dump_vertex(vertices, '{}_{}.mat'.format(img_fp.replace(suffix, ''), ind))
             if args.dump_pts:
-                wfp = '{}_{}_our.txt'.format(img_fp.replace(suffix, ''), ind)
+                wfp = '{}_{}.txt'.format(img_fp.replace(suffix, ''), ind)
                 np.savetxt(wfp, pts68, fmt='%.3f')
                 print('Save 68 3d landmarks to {}'.format(wfp))
             if args.dump_roi_box:
@@ -182,7 +173,7 @@ def main(args):
             cv2.imwrite(wfp, pncc_feature[:, :, ::-1])  # cv2.imwrite will swap RGB -> BGR
             print('Dump to {}'.format(wfp))
         if args.dump_res:
-            draw_landmarks(img_ori, pts_res, wfp=img_fp.replace(suffix, 'our_3DDFA.jpg'), show_flg=args.show_flg)
+            draw_landmarks(img_ori, pts_res, wfp=img_fp.replace(suffix, '_RADAN.jpg'), show_flg=args.show_flg)
 
 
 if __name__ == '__main__':
