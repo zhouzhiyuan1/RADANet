@@ -31,7 +31,7 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
 1. Clone this repo (this may take some time as it is a little big)
     ```
     git clone https://github.com/zhouzhiyuan1/RADANet.git  # or git@github.com:zhouzhiyuan1/RADANet.git
-    cd RADAN
+    cd RADANet
     ```
 
 2. Build cython module (just one line for building)
@@ -65,11 +65,11 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
     The 68 landmarks visualization result `samples/test1_3DDFA.jpg` and pose estimation result `samples/test1_pose.jpg` are shown below:
 
 <p align="center">
-  <img src="Code/samples/test1_3DDFA.jpg" alt="samples" width="650px">
+  <img src="RADANet/Code/samples/test1_3DDFA.jpg" alt="samples" width="650px">
 </p>
 
 <p align="center">
-  <img src="Code/samples/test1_pose.jpg" alt="samples" width="650px">
+  <img src="RADANet/Code/samples/test1_pose.jpg" alt="samples" width="650px">
 </p>
 
 4. Additional example
