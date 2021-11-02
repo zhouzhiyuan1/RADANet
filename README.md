@@ -79,11 +79,11 @@ In addition, I strongly recommend using Python3.6+ instead of older version for 
     ```
 
 <p align="center">
-  <img src="Code/samples/emma_input_3DDFA.jpg" alt="samples" width="750px">
+  <img src="RADANet/Code/samples/emma_input_3DDFA.jpg" alt="samples" width="750px">
 </p>
 
 <p align="center">
-  <img src="samples/emma_input_pose.jpg" alt="samples" width="750px">
+  <img src="RADANet/Code/samples/emma_input_pose.jpg" alt="samples" width="750px">
 </p>
 
 
@@ -109,19 +109,6 @@ The training scripts lie in `training` directory. The related resources are in b
 
 After preparing the training dataset and configuration files, go into `training` directory and run the bash scripts to train. 
 The training configutations are all presented in bash scripts.
-
-## FQA
-1. Face bounding box initialization
-
-    The original paper shows that using detected bounding box instead of ground truth box will cause a little performance drop. Thus the current face cropping method is robustest. Quantitative results are shown in below table.
-
-<p align="center">
-  <img src="imgs/bouding_box_init.png" alt="bounding box" width="500px">
-</p>
-
-2. Face reconstruction
-   
-   The texture of non-visible area is distorted due to self-occlusion, therefore the non-visible face region may appear strange (a little horrible).
 
 
 
